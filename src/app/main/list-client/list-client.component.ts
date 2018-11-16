@@ -1,3 +1,4 @@
+import { ClientVO } from './../Model/clientVO';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-client.component.scss']
 })
 export class ListClientComponent implements OnInit {
-
+  listClient: ClientVO[] = [];
   constructor() { }
 
   ngOnInit() {
