@@ -19,14 +19,7 @@ export class ListClientComponent implements OnInit {
     this.getLista.getListaClientes().subscribe((res) => {
       console.log(res);
       this.listClient = res;
-      /* for (const track of this.tracks) {
-        track.artistName = '';
-        for (const artist of track['artists']) {
-          track.artistName += artist.name + ', ';
-        }
-        track.artistName.slice((track.artistName.length - 2), track.artistName.length);
-      }
-      this.popularTable(); */
+      console.log(this.listClient);
     }, (err) => {
       console.log(err);
     });

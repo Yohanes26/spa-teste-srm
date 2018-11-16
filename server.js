@@ -6,7 +6,7 @@ var path = require('path');
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/spa-teste-srm'));
 app.use(function (req, res, next) {
-    req.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });

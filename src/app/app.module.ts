@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainModule } from './main/main.module';
 import { CommonModule } from '@angular/common';
+import { JsonpModule, Jsonp, Response } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MainModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    JsonpModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
