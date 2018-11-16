@@ -5,6 +5,7 @@ import { ListClientComponent } from './list-client/list-client.component';
 import { ClientComponent } from './client/client.component';
 import { RouterModule } from '@angular/router';
 import { ListClientService } from './list-client/list-client.service';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ListClientService } from './list-client/list-client.service';
         ClientComponent
     ],
     imports: [
-        RouterModule
+        RouterModule,
+        CommonModule
     ],
     providers: [ListClientService],
     exports: [

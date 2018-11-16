@@ -1,1 +1,2 @@
-<router-outlet></router-outlet>
+<app-client *ngIf="habilitarClient"></app-client>
+<app-list-client *ngIf="!habilitarClient"></app-list-client>
