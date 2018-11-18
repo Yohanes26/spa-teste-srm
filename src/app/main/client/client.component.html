@@ -1,3 +1,10 @@
-<p>
-  client works!
-</p>
+<div id="client" class="client">
+    <h4>Basic mat-select</h4>
+    <mat-form-field>
+        <mat-select placeholder="Riscos">
+            <mat-option *ngFor="let risco of riscos" [value]="risco.value">
+                {{risco.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

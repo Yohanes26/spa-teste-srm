@@ -5,7 +5,7 @@ import { ClientComponent } from './main/client/client.component';
 import { ListClientComponent } from './main/list-client/list-client.component';
 
 const routes: Routes = [
-    { path: '', component: MainComponent },
+  { path: '', component: ClientComponent },
     { path: 'home', component: MainComponent },
     { path: 'cadastroCliente', component: ClientComponent },
     { path: 'listaCliente', component: ListClientComponent }

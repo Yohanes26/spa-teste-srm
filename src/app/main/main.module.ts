@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { ListClientService } from './list-client/list-client.service';
 import { CommonModule } from '@angular/common';
 
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
     declarations: [
@@ -16,7 +18,8 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
+        MatSelectModule
     ],
     providers: [ListClientService, MainComponent],
     exports: [
