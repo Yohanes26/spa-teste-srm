@@ -11,6 +11,7 @@ import { ListaClienteService } from './lista-cliente.service';
 })
 export class ListaClienteComponent implements OnInit {
   listaCliente: ClienteVO[] = [];
+  lista: ClienteVO[] = [];
   habilitaTabela = false;
   habilitaSpinner = true;
   habilitaTentarNovamente = false;
@@ -31,6 +32,7 @@ export class ListaClienteComponent implements OnInit {
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = false;
       this.habilitaTabela = true;
+      this.lista = JSON.parse(res);
       console.log(this.listaCliente);
     }, (err) => {
       console.log(err);
@@ -38,6 +40,10 @@ export class ListaClienteComponent implements OnInit {
       this.habilitaTentarNovamente = true;
       this.habilitaTabela = false;
     });
+  }
+
+  mudaPaginacao(evento) {
+    console.log(evento);
   }
 
 }
