@@ -11,6 +11,9 @@ import { ClientComponent } from './client/client.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material';
+
 
 @NgModule({
     declarations: [
@@ -24,13 +27,16 @@ import { MatButtonModule } from '@angular/material/button';
         MatSelectModule,
         MatInputModule,
         FormsModule,
-        MatButtonModule
+        MatButtonModule,
+        MatProgressBarModule,
+        MatSnackBarModule
     ],
     providers: [ListClientService, MainComponent],
     exports: [
         MainComponent,
         ListClientComponent,
-        ClientComponent
+        ClientComponent,
+        MatSnackBarModule
     ]
 })
 export class MainModule { }

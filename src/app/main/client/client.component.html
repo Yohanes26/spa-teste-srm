@@ -1,7 +1,7 @@
 <div id="client" class="client">
-    <form class="formCadastro" id="formCadastro" name="formaCadastro">
+    <form #formularioCadastro="ngForm" class="formCadastro" id="formCadastro" name="formaCadastro">
         <div id="cadastro" class="cadastro">
-            <h2 id="h4" class="h4">Cadastro</h2>
+            <h2 id="h4" class="h4">Proposta de Crédito</h2>
         </div>
         <div class="pula-linha">
             <mat-form-field>
@@ -10,7 +10,7 @@
         </div>
         <div class="pula-linha">
             <mat-form-field>
-                <input matInput placeholder="Limite de Crédito" [(ngModel)]="client.limiteCredito" name="limiteCredito" id="limiteCredito" class="limiteCredito" required>
+                <input type="number" matInput placeholder="Limite de Crédito" [(ngModel)]="client.limiteCredito" name="limiteCredito" id="limiteCredito" class="limiteCredito" required>
             </mat-form-field>
         </div>
             <mat-form-field>
@@ -23,5 +23,7 @@
         <mat-form-field>
             <input matInput placeholder="Juros" [(ngModel)]="juros" name="juros" id="juros" class="juros" disabled>
         </mat-form-field>
+        <button (click)="salvarCliente(formularioCadastro.valid)" mat-button>Salvar</button>
+        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
     </form>
 </div>
