@@ -27,23 +27,23 @@ export class ListaClienteComponent implements OnInit {
     this.habilitaTentarNovamente = false;
     this.habilitaTabela = false;
     this.getLista.getListaClientes().subscribe((res) => {
-      console.log(res);
       this.listaCliente = res;
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = false;
       this.habilitaTabela = true;
-      this.lista = JSON.parse(res);
-      console.log(this.listaCliente);
+      this.mudaPaginacao(10);
     }, (err) => {
-      console.log(err);
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = true;
       this.habilitaTabela = false;
     });
   }
 
-  mudaPaginacao(evento) {
-    console.log(evento);
+  mudaPaginacao(evento: any) {
+    this.lista = [];
+    for (let i = (evento - 10); i < evento; i++) {
+      this.lista.push(this.listaCliente[i]);
+    }
   }
 
 }
