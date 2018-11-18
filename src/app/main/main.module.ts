@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
         RouterModule,
         CommonModule
     ],
-    providers: [ListClientService],
+    providers: [ListClientService, MainComponent],
     exports: [
         MainComponent,
         ListClientComponent,
