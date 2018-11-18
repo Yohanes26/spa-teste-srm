@@ -8,6 +8,8 @@ import { ListClientService } from './list-client/list-client.service';
 import { CommonModule } from '@angular/common';
 
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
     imports: [
         RouterModule,
         CommonModule,
-        MatSelectModule
+        MatSelectModule,
+        MatInputModule,
+        FormsModule
     ],
     providers: [ListClientService, MainComponent],
     exports: [

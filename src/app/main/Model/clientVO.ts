@@ -4,4 +4,7 @@ export class ClientVO {
     limiteCredito: String;
     risco: String;
     juros: String;
+
+    constructor() {
+    }
 }

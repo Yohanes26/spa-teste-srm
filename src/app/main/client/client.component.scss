@@ -1,5 +1,30 @@
 .client{
     width: 100%;
     height: 100vh;
-    background-color: #FFFDF0;
+    background-color: #FFFFFF;
+}
+
+.formCadastro{
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 50px;
+}
+
+.cadastro{
+    padding-bottom:25px;
+}
+
+@media screen and (max-width: 900px) {
+    .formCadastro{
+        margin-top: 30px;
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .formCadastro{
+        margin-top: 20px;
+        width: 200px;
+    }
 }
