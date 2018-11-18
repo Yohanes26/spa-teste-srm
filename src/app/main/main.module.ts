@@ -1,16 +1,16 @@
-import { MainComponent } from './main.component';
-
 import { NgModule } from '@angular/core';
-import { ListClientComponent } from './list-client/list-client.component';
-import { ClientComponent } from './client/client.component';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ListClientService } from './list-client/list-client.service';
 import { CommonModule } from '@angular/common';
+
+import { ListClientComponent } from './list-client/list-client.component';
+import { ListClientService } from './list-client/list-client.service';
+import { MainComponent } from './main.component';
+import { ClientComponent } from './client/client.component';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
-
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         MatSelectModule,
         MatInputModule,
-        FormsModule
+        FormsModule,
+        MatButtonModule
     ],
     providers: [ListClientService, MainComponent],
     exports: [

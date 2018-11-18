@@ -1,5 +1,7 @@
-import { ClientVO } from './../Model/clientVO';
 import { Component, OnInit } from '@angular/core';
+
+import { ClientVO } from './../Model/clientVO';
+
 import { ListClientService } from './list-client.service';
 
 @Component({

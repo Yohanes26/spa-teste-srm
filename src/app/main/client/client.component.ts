@@ -1,6 +1,8 @@
-import { JurosVO } from './../Model/jurosVO';
-import { ClientService } from './client.service';
 import { Component, OnInit } from '@angular/core';
+
+import { ClientService } from './client.service';
+
+import { JurosVO } from './../Model/jurosVO';
 import { ClientVO } from '../Model/clientVO';
 
 @Component({
