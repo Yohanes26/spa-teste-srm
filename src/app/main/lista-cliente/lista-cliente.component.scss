@@ -1,0 +1,41 @@
+.list-client{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.alinharSpinner{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.tentarNovamente{
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 50px;
+    
+    .mensagemErro{
+        color: red;
+    }
+}
+
+.grid{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    .tabela{
+        margin-top: 30px;
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .tabela{
+        margin-top: 20px;
+        width: 200px;
+    }
+}

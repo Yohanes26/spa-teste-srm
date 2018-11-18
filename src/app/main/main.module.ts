@@ -3,24 +3,25 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { ListClientComponent } from './list-client/list-client.component';
-import { ListClientService } from './list-client/list-client.service';
+import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
+import { ListaClienteService } from './lista-cliente/lista-cliente.service';
 import { MainComponent } from './main.component';
-import { ClientComponent } from './client/client.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     declarations: [
         MainComponent,
-        ListClientComponent,
-        ClientComponent
+        ListaClienteComponent,
+        ClienteComponent
     ],
     imports: [
         RouterModule,
@@ -31,13 +32,15 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         MatButtonModule,
         MatProgressBarModule,
         MatSnackBarModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatPaginatorModule,
+        MatTableModule
     ],
-    providers: [ListClientService, MainComponent],
+    providers: [ListaClienteService, MainComponent],
     exports: [
         MainComponent,
-        ListClientComponent,
-        ClientComponent,
+        ListaClienteComponent,
+        ClienteComponent,
         MatSnackBarModule
     ]
 })

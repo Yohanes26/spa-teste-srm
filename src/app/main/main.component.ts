@@ -6,7 +6,6 @@ import { Component, OnInit, OnChanges } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  habilitarClient: Boolean = true;
 
   constructor() { }
 

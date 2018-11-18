@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
     providedIn: 'root'
 })
-export class ListClientService {
+export class ListaClienteService {
 
-    uriGetListaClientes = 'https://java-teste-srm.herokuapp.com/client?callback=JSONP_CALLBACK';
+    uriGetListaClientes = 'https://java-teste-srm.herokuapp.com/client';
 
     constructor(
         private http: HttpClient

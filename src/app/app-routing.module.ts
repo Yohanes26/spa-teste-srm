@@ -1,14 +1,14 @@
 import { MainComponent } from './main/main.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ClientComponent } from './main/client/client.component';
-import { ListClientComponent } from './main/list-client/list-client.component';
+import { ClienteComponent } from './main/cliente/cliente.component';
+import { ListaClienteComponent } from './main/lista-cliente/lista-cliente.component';
 
 const routes: Routes = [
-  { path: '', component: ClientComponent },
+  { path: '', component: ClienteComponent },
     { path: 'home', component: MainComponent },
-    { path: 'cadastroCliente', component: ClientComponent },
-    { path: 'listaCliente', component: ListClientComponent }
+    { path: 'cadastroCliente', component: ClienteComponent },
+    { path: 'listaCliente', component: ListaClienteComponent }
 ];
 
 @NgModule({

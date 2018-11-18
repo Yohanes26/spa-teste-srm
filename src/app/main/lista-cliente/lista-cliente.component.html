@@ -1,0 +1,53 @@
+<div id="list-client" class="list-client">
+    <div id="alinharSpinner" class="alinharSpinner" *ngIf="habilitaSpinner">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="tentarNovamente" id="tentarNovamente" *ngIf="habilitaTentarNovamente">
+        <div class="grid" id="grid">
+            <small id="mensagemErro" class="mensagemErro">
+                O Servidor está iniciando, aguarde {{segundos}} segundos e tente novamente!
+            </small>
+        </div>
+        <button (click)="ngOnInit()" mat-button>Tentar Novamente!</button>
+    </div>
+    <div *ngIf="habilitaTabela" class="tabela" id="tabela">
+
+        <table mat-table [dataSource]="listClient" class="mat-elevation-z8">
+        
+            <!-- Id Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID</th>
+                <td mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
+            </ng-container>
+        
+            <!-- Nome Column -->
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
+            </ng-container>
+        
+            <!-- Limite Credito Column -->
+            <ng-container matColumnDef="limite">
+                <th mat-header-cell *matHeaderCellDef> Limite </th>
+                <td mat-cell *matCellDef="let cliente"> {{cliente.limiteCredito}} </td>
+            </ng-container>
+        
+            <!-- Risco Column -->
+            <ng-container matColumnDef="risco">
+                <th mat-header-cell *matHeaderCellDef> Risco </th>
+                <td mat-cell *matCellDef="let cliente"> {{cliente.risco}} </td>
+            </ng-container>
+
+            <!-- Juros Column -->
+            <ng-container matColumnDef="juros">
+                <th mat-header-cell *matHeaderCellDef> Juros </th>
+                <td mat-cell *matCellDef="let cliente"> {{cliente.juros}} </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[10]">
+        </mat-paginator>
+    </div>
+</div>

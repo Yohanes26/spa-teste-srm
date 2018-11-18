@@ -1,4 +1,4 @@
-export class ClientVO {
+export class ClienteVO {
     id: number;
     nome: String;
     limiteCredito: String;

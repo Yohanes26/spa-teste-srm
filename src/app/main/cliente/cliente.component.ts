@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ClientService } from './client.service';
+import { ClienteService } from './cliente.service';
 
 import { JurosVO } from './../Model/jurosVO';
-import { ClientVO } from '../Model/clientVO';
+import { ClienteVO } from './../Model/clienteVO';
 
 import { MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-client',
-  templateUrl: './client.component.html',
-  styleUrls: ['./client.component.scss']
+  selector: 'app-cliente',
+  templateUrl: './cliente.component.html',
+  styleUrls: ['./cliente.component.scss']
 })
-export class ClientComponent implements OnInit {
+export class ClienteComponent implements OnInit {
   juros;
   listaJuros: JurosVO[] = [];
-  client: ClientVO = new ClientVO();
+  cliente: ClienteVO = new ClienteVO();
   formularioInvalido = false;
   loading = false;
   habilitarForm = false;
@@ -24,22 +24,22 @@ export class ClientComponent implements OnInit {
   segundos = 20;
 
   constructor(
-    private clientService: ClientService,
+    private clienteService: ClienteService,
     public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
     this.getListaJuros();
-    this.client.risco = this.listaJuros[0].risco;
-    this.client.juros = this.listaJuros[0].juros;
-    this.juros = this.client.juros + '%';
+    this.cliente.risco = this.listaJuros[0].risco;
+    this.cliente.juros = this.listaJuros[0].juros;
+    this.juros = this.cliente.juros + '%';
   }
 
   getListaJuros() {
     this.habilitarSpinner = true;
     this.habilitarTentarNovamente = false;
     this.habilitarForm = false;
-    this.clientService.getListaJuros().subscribe((res) => {
+    this.clienteService.getListaJuros().subscribe((res) => {
       this.listaJuros = res;
       this.habilitarForm = true;
       this.habilitarSpinner = false;
@@ -53,27 +53,27 @@ export class ClientComponent implements OnInit {
   }
 
   setValorRisco(riscoSelecionado) {
-    this.client.risco = riscoSelecionado;
+    this.cliente.risco = riscoSelecionado;
     this.setJuros();
   }
 
   setJuros() {
-    if (this.client.risco === this.listaJuros[0].risco) {
-      this.client.juros = this.listaJuros[0].juros;
-      this.juros = this.client.juros + '%';
-    } else if (this.client.risco === this.listaJuros[1].risco) {
-      this.client.juros = this.listaJuros[1].juros;
-      this.juros = this.client.juros + '%';
+    if (this.cliente.risco === this.listaJuros[0].risco) {
+      this.cliente.juros = this.listaJuros[0].juros;
+      this.juros = this.cliente.juros + '%';
+    } else if (this.cliente.risco === this.listaJuros[1].risco) {
+      this.cliente.juros = this.listaJuros[1].juros;
+      this.juros = this.cliente.juros + '%';
     } else {
-      this.client.juros = this.listaJuros[2].juros;
-      this.juros = this.client.juros + '%';
+      this.cliente.juros = this.listaJuros[2].juros;
+      this.juros = this.cliente.juros + '%';
     }
   }
 
   salvarCliente(formValido) {
     if (formValido === true) {
       this.loading = true;
-      this.clientService.saveClient(this.client).subscribe((res) => {
+      this.clienteService.salvarCliente(this.cliente).subscribe((res) => {
         this.loading = false;
         this.openSnackBar('Salvo com sucesso!', 'OK!');
         this.resetModel();
@@ -92,10 +92,10 @@ export class ClientComponent implements OnInit {
   }
 
   resetModel() {
-    this.client.limiteCredito = '';
-    this.client.nome = '';
-    this.client.risco = this.listaJuros[0].risco;
-    this.client.juros = this.listaJuros[0].juros;
+    this.cliente.limiteCredito = '';
+    this.cliente.nome = '';
+    this.cliente.risco = this.listaJuros[0].risco;
+    this.cliente.juros = this.listaJuros[0].juros;
     this.juros = this.listaJuros[0].juros + '%';
   }
 
