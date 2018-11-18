@@ -3,19 +3,23 @@
         <div id="cadastro" class="cadastro">
             <h2 id="h4" class="h4">Cadastro</h2>
         </div>
-        <mat-form-field>
-            <input matInput placeholder="Nome Completo" [(ngModel)]="client.nome" name="nome" id="nome" class="nome" required>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Limite de Crédito" [(ngModel)]="client.limiteCredito" name="limiteCredito" id="limiteCredito" class="limiteCredito" required>
-        </mat-form-field>
-        <mat-form-field>
-            <select matNativeControl (change)="setValorRisco($event.target.value)" placeholder="Selecione o Risco" required>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-            </select>
-        </mat-form-field>
+        <div class="pula-linha">
+            <mat-form-field>
+                <input matInput placeholder="Nome Completo" [(ngModel)]="client.nome" name="nome" id="nome" class="nome" required>
+            </mat-form-field>
+        </div>
+        <div class="pula-linha">
+            <mat-form-field>
+                <input matInput placeholder="Limite de Crédito" [(ngModel)]="client.limiteCredito" name="limiteCredito" id="limiteCredito" class="limiteCredito" required>
+            </mat-form-field>
+        </div>
+            <mat-form-field>
+                <select matNativeControl (change)="setValorRisco($event.target.value)" placeholder="Selecione o Risco" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+            </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Juros" [(ngModel)]="juros" name="juros" id="juros" class="juros" disabled>
         </mat-form-field>
