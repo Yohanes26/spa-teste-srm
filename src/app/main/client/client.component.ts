@@ -18,6 +18,7 @@ export class ClientComponent implements OnInit {
   client: ClientVO = new ClientVO();
   formularioInvalido = false;
   loading = false;
+  habilitarForm = false;
 
   constructor(
     private clientService: ClientService,

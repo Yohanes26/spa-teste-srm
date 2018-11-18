@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MatSnackBarModule } from '@angular/material';
         FormsModule,
         MatButtonModule,
         MatProgressBarModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatProgressSpinnerModule
     ],
     providers: [ListClientService, MainComponent],
     exports: [
