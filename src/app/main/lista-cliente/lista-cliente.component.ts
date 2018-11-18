@@ -10,10 +10,11 @@ import { ListaClienteService } from './lista-cliente.service';
   styleUrls: ['./lista-cliente.component.scss']
 })
 export class ListaClienteComponent implements OnInit {
-  listClient: ClienteVO[] = [];
+  listaCliente: ClienteVO[] = [];
   habilitaTabela = false;
   habilitaSpinner = true;
   habilitaTentarNovamente = false;
+  displayedColumns: string[] = ['id', 'nome', 'limiteCredito', 'risco', 'juros'];
   constructor(private getLista: ListaClienteService) { }
 
   ngOnInit() {
@@ -26,11 +27,11 @@ export class ListaClienteComponent implements OnInit {
     this.habilitaTabela = false;
     this.getLista.getListaClientes().subscribe((res) => {
       console.log(res);
-      this.listClient = res;
+      this.listaCliente = res;
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = false;
       this.habilitaTabela = true;
-      console.log(this.listClient);
+      console.log(this.listaCliente);
     }, (err) => {
       console.log(err);
       this.habilitaSpinner = false;
