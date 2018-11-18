@@ -18,8 +18,8 @@ export class ClientComponent implements OnInit {
 
   ngOnInit() {
     this.getListaJuros();
-    this.client.risco = 'A';
-    this.client.juros = '0';
+    this.client.risco = this.listaJuros[0].risco;
+    this.client.juros = this.listaJuros[0].juros;
     this.juros = this.client.juros + '%';
   }
 
@@ -38,14 +38,14 @@ export class ClientComponent implements OnInit {
   }
 
   setJuros() {
-    if (this.client.risco === 'A') {
-      this.client.juros = '0';
+    if (this.client.risco === this.listaJuros[0].risco) {
+      this.client.juros = this.listaJuros[0].juros;
       this.juros = this.client.juros + '%';
-    } else if (this.client.risco === 'B') {
-      this.client.juros = '10';
+    } else if (this.client.risco === this.listaJuros[1].risco) {
+      this.client.juros = this.listaJuros[1].juros;
       this.juros = this.client.juros + '%';
     } else {
-      this.client.juros = '20';
+      this.client.juros = this.listaJuros[2].juros;
       this.juros = this.client.juros + '%';
     }
   }
