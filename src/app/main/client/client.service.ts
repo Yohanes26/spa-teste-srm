@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ClientService {
 
     uriGetListaJuros = 'https://java-teste-srm.herokuapp.com/juros?callback=JSONP_CALLBACK';
-    uriSaveClient = 'https://java-teste-srm.herokuapp.com/client/save?callback=JSONP_CALLBACK';
+    uriSaveClient = 'https://java-teste-srm.herokuapp.com/client/save';
 
     constructor(
         private http: HttpClient
