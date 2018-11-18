@@ -10,8 +10,29 @@
     margin-top: 50px;
 }
 
+.tentarNovamente{
+    margin: 0 auto;
+    width: 600px;
+    margin-top: 50px;
+    
+    .mensagemErro{
+        color: red;
+    }
+}
+
 .cadastro{
     padding-bottom:25px;
+}
+
+.alinharSpinner{
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.grid{
+    width: fit-content;
+    margin: 0 auto;
 }
 
 

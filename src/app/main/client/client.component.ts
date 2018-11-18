@@ -19,6 +19,9 @@ export class ClientComponent implements OnInit {
   formularioInvalido = false;
   loading = false;
   habilitarForm = false;
+  habilitarTentarNovamente = false;
+  habilitarSpinner = true;
+  segundos = 20;
 
   constructor(
     private clientService: ClientService,
@@ -33,9 +36,19 @@ export class ClientComponent implements OnInit {
   }
 
   getListaJuros() {
+    this.habilitarSpinner = true;
+    this.habilitarTentarNovamente = false;
+    this.habilitarForm = false;
     this.clientService.getListaJuros().subscribe((res) => {
       this.listaJuros = res;
+      this.habilitarForm = true;
+      this.habilitarSpinner = false;
+      this.habilitarTentarNovamente = false;
     }, (err) => {
+      console.log(err);
+      this.habilitarTentarNovamente = true;
+      this.habilitarForm = false;
+      this.habilitarSpinner = false;
     });
   }
 

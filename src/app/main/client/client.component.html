@@ -1,8 +1,16 @@
 <div id="client" class="client">
-    <div *ngIf="habilitarForm">
+    <div id="alinharSpinner" class="alinharSpinner" *ngIf="habilitarSpinner">
         <mat-spinner></mat-spinner>
     </div>
-    <form *ngIf="!habilitarForm" #formularioCadastro="ngForm" class="formCadastro" id="formCadastro" name="formaCadastro">
+    <div class="tentarNovamente" id="tentarNovamente" *ngIf="habilitarTentarNovamente">
+        <div class="grid" id="grid">
+            <small id="mensagemErro" class="mensagemErro">
+                O Servidor está iniciando, aguarde {{segundos}} segundos e tente novamente!
+            </small>
+        </div>
+        <button (click)="ngOnInit()" mat-button>Tentar Novamente!</button>
+    </div>
+    <form *ngIf="habilitarForm" #formularioCadastro="ngForm" class="formCadastro" id="formCadastro" name="formaCadastro">
         <div id="cadastro" class="cadastro">
             <h2 id="h4" class="h4">Proposta de Crédito</h2>
         </div>
