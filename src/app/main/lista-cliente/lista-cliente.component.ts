@@ -43,6 +43,7 @@ export class ListaClienteComponent implements OnInit {
     console.log(evento);
     this.lista = [];
     const event = Number(evento + '0');
+    console.log(event);
     for (let i = event; i < event; i++) {
       this.lista.push(this.listaCliente[i]);
     }
