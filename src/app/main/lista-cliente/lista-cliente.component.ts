@@ -44,14 +44,12 @@ export class ListaClienteComponent implements OnInit {
   mudaPaginacao(evento: any) {
     console.log(evento);
     evento++;
-    evento = Number(evento + '0');
-    console.log(evento, 'ola');
-    /* this.lista = [];
     const event = Number(evento + '0');
-    console.log(event);
-    for (let i = event; i < event; i++) {
+    console.log(event, 'ola');
+    this.lista = [];
+    for (let i = (event - 10); i < event; i++) {
       this.lista.push(this.listaCliente[i]);
-    } */
+    }
   }
 
 }
