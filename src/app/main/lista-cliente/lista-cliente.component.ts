@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteVO } from '../Model/clienteVO';
 
 import { ListaClienteService } from './lista-cliente.service';
+import { PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-lista-cliente',
@@ -16,6 +17,7 @@ export class ListaClienteComponent implements OnInit {
   habilitaSpinner = true;
   habilitaTentarNovamente = false;
   displayedColumns: string[] = ['id', 'nome', 'limiteCredito', 'risco', 'juros'];
+  pageEvent: PageEvent;
   constructor(private getLista: ListaClienteService) { }
 
   ngOnInit() {
