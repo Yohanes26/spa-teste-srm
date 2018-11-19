@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListaClienteService {
 
-    uriGetListaClientes = 'https://java-teste-srm.herokuapp.com/client';
+    uriGetListaClientes = 'https://java-teste-srm.herokuapp.com/cliente';
 
     constructor(
         private http: HttpClient
