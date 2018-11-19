@@ -15,7 +15,7 @@
         <table mat-table [dataSource]="lista" class="example-container mat-elevation-z8">
         
             <!-- Id Column -->
-            <ng-container matColumnDef="id">
+            <ng-container matColumnDef="id" sticky>
                 <th style="width: 20%;" mat-header-cell *matHeaderCellDef> ID</th>
                 <td style="width: 20%;" mat-cell *matCellDef="let cliente"> {{cliente.id}} </td>
             </ng-container>
@@ -39,7 +39,7 @@
             </ng-container>
 
             <!-- Juros Column -->
-            <ng-container matColumnDef="juros">
+            <ng-container matColumnDef="juros" stickyEnd>
                 <th style="width: 20%; padding: 5px;" mat-header-cell *matHeaderCellDef> Juros </th>
                 <td style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-cell *matCellDef="let cliente"> {{cliente.juros}} % </td>
             </ng-container>
