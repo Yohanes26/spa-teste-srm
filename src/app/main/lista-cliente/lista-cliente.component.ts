@@ -31,7 +31,7 @@ export class ListaClienteComponent implements OnInit {
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = false;
       this.habilitaTabela = true;
-      this.mudaPaginacao(10);
+      this.mudaPaginacao(0);
     }, (err) => {
       this.habilitaSpinner = false;
       this.habilitaTentarNovamente = true;
@@ -42,7 +42,8 @@ export class ListaClienteComponent implements OnInit {
   mudaPaginacao(evento: any) {
     console.log(evento);
     this.lista = [];
-    for (let i = (evento - 10); i < evento; i++) {
+    const event = Number(evento + '0');
+    for (let i = (event - 10); i < event; i++) {
       this.lista.push(this.listaCliente[i]);
     }
   }
