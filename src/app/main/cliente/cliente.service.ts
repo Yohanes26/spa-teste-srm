@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClienteService {
 
-    uriGetListaJuros = 'https://java-teste-srm.herokuapp.com/juros';
-    uriSalvarCliente = 'https://java-teste-srm.herokuapp.com/cliente/salvar';
+    public uriGetListaJuros = 'https://java-teste-srm.herokuapp.com/juros';
+    public uriSalvarCliente = 'https://java-teste-srm.herokuapp.com/cliente/salvar';
 
     constructor(
         private http: HttpClient
