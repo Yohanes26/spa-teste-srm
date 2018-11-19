@@ -22,26 +22,26 @@
         
             <!-- Nome Column -->
             <ng-container matColumnDef="nome">
-                <th style="width: 20%;" mat-header-cell *matHeaderCellDef> Nome </th>
-                <td style="width: 20%;" mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
+                <th style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-header-cell *matHeaderCellDef> Nome </th>
+                <td style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
             </ng-container>
         
             <!-- Limite Credito Column -->
             <ng-container matColumnDef="limiteCredito">
-                <th style="width: 20%;" mat-header-cell *matHeaderCellDef> Limite de Crédito </th>
-                <td style="width: 20%;" mat-cell *matCellDef="let cliente"> {{cliente.limiteCredito}} </td>
+                <th style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-header-cell *matHeaderCellDef> Limite de Crédito </th>
+                <td style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-cell *matCellDef="let cliente"> {{cliente.limiteCredito}} </td>
             </ng-container>
         
             <!-- Risco Column -->
             <ng-container matColumnDef="risco">
-                <th style="width: 20%;" mat-header-cell *matHeaderCellDef> Risco </th>
-                <td style="width: 20%;" mat-cell *matCellDef="let cliente"> {{cliente.risco}} </td>
+                <th style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-header-cell *matHeaderCellDef> Risco </th>
+                <td style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-cell *matCellDef="let cliente"> {{cliente.risco}} </td>
             </ng-container>
 
             <!-- Juros Column -->
             <ng-container matColumnDef="juros">
-                <th style="width: 20%;" mat-header-cell *matHeaderCellDef> Juros </th>
-                <td style="width: 20%;" mat-cell *matCellDef="let cliente"> {{cliente.juros}} </td>
+                <th style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-header-cell *matHeaderCellDef> Juros </th>
+                <td style="width: 20%; padding: 5px; border-left: solid 1px black;" mat-cell *matCellDef="let cliente"> {{cliente.juros}} </td>
             </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
