@@ -29,10 +29,10 @@ export class ClienteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getListaJuros();
-    this.cliente.risco = this.listaJuros[0].risco;
-    this.cliente.juros = this.listaJuros[0].juros;
+    this.cliente.risco = 'A';
+    this.cliente.juros = '0';
     this.juros = this.cliente.juros + '%';
+        this.getListaJuros();
   }
 
   getListaJuros() {
@@ -41,6 +41,9 @@ export class ClienteComponent implements OnInit {
     this.habilitarForm = false;
     this.clienteService.getListaJuros().subscribe((res) => {
       this.listaJuros = res;
+      this.cliente.risco = this.listaJuros[0].risco;
+      this.cliente.juros = this.listaJuros[0].juros;
+      this.juros = this.cliente.juros + '%';
       this.habilitarForm = true;
       this.habilitarSpinner = false;
       this.habilitarTentarNovamente = false;
@@ -71,7 +74,7 @@ export class ClienteComponent implements OnInit {
   }
 
   salvarCliente(formValido) {
-    if (formValido === true) {
+    if (formValido === true && this.cliente.risco) {
       this.loading = true;
       this.clienteService.salvarCliente(this.cliente).subscribe((res) => {
         this.loading = false;
